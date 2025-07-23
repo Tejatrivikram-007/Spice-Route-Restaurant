@@ -531,7 +531,6 @@ nav ul li a:hover::after, nav ul li a.active::after {
   color: var(--light-color);
 }
 
-/* View buttons for responsive menu category filtering */
 .view-buttons {
   display: none;
   justify-content: center;
@@ -555,11 +554,89 @@ nav ul li a:hover::after, nav ul li a.active::after {
   background: var(--secondary-color);
 }
 
+/* Veg toggle sliding button */
+.veg-toggle-container {
+  user-select: none;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc; /* default gray color */
+  transition: 0.4s;
+  border-radius: 26px;
+}
+
+input:checked + .slider {
+  background-color: #28a745; /* green color when checked */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* Rounded slider */
+.slider.round {
+  border-radius: 26px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .veg-toggle-container {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Show view buttons only on small screens */
 @media (max-width: 768px) {
   .menu-tabs {
     display: none;
   }
   .view-buttons {
+    display: flex;
+  }
+  /* Show veg toggle container in responsive */
+  .veg-toggle-container {
     display: flex;
   }
 }
@@ -940,6 +1017,8 @@ footer {
     transform: translateY(0);
   }
 }
+
+
 
 /* ================ RESPONSIVE STYLES ================ */
 @media (max-width: 992px) {

@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Removed dark mode toggle as per user request
+
 
   // View buttons for menu categories (responsive)
   const viewButtons = document.querySelectorAll('.view-btn');
@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
   viewButtons.forEach(btn => {
     btn.addEventListener('click', function() {
       const category = this.dataset.category;
+      const vegOnly = vegToggle.checked;
 
       // Show only the selected category items
       menuCategories.forEach(cat => {
@@ -103,12 +104,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
 
-      // Hide all menu items not in the selected category
+      // Hide all menu items not in the selected category, apply veg filter if active
       menuItems.forEach(item => {
-        if (item.dataset.category === category) {
-          item.style.display = 'flex';
+        const itemCategory = item.dataset.category;
+        const isVeg = item.dataset.veg === 'true';
+
+        if (vegOnly && (category === 'starters' || category === 'mains')) {
+          if (itemCategory === category && isVeg) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
+        } else if (vegOnly && category === 'all') {
+          if ((itemCategory === 'starters' || itemCategory === 'mains') && isVeg) {
+            item.style.display = 'flex';
+          } else if (itemCategory === 'desserts' || itemCategory === 'drinks') {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
         } else {
-          item.style.display = 'none';
+          if (itemCategory === category) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
         }
       });
 
@@ -172,6 +192,74 @@ document.addEventListener('DOMContentLoaded', function() {
   // Menu filtering
   const tabBtns = document.querySelectorAll('.tab-btn');
   // const menuItems = document.querySelectorAll('.menu-item');
+  const vegToggle = document.getElementById('vegToggle');
+
+  function filterMenu() {
+    const activeTab = document.querySelector('.tab-btn.active');
+    const category = activeTab ? activeTab.dataset.category : 'all';
+    const vegOnly = vegToggle.checked;
+
+    menuItems.forEach(item => {
+      const itemCategory = item.dataset.category;
+      const isVeg = item.dataset.veg === 'true';
+
+      // Show item if category matches or 'all' is selected
+      const categoryMatch = category === 'all' || itemCategory === category;
+
+      // If vegOnly is true and category is starters or mains, show only veg items
+      if (vegOnly && (category === 'starters' || category === 'mains')) {
+        if (itemCategory === category && isVeg) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      } else if (vegOnly && category === 'all') {
+        // Show veg starters and mains, and all desserts and drinks when category is 'all' and vegOnly is true
+        if ((itemCategory === 'starters' || itemCategory === 'mains') && isVeg) {
+          item.style.display = 'flex';
+        } else if (itemCategory === 'desserts' || itemCategory === 'drinks') {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      } else {
+        // Show item normally based on category filter
+        if (categoryMatch) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      }
+    });
+
+    // Show/hide category headings based on filtered items
+    document.querySelectorAll('.menu-category').forEach(cat => {
+      const catCategory = cat.dataset.category;
+      if (vegOnly) {
+        if (catCategory === 'starters' || catCategory === 'mains') {
+          // Show category if it has visible veg items
+          const hasVisibleVeg = Array.from(cat.querySelectorAll('.menu-item')).some(item => {
+            return item.style.display !== 'none' && item.dataset.veg === 'true';
+          });
+          cat.style.display = hasVisibleVeg ? 'block' : 'none';
+        } else {
+          // Show only the selected category heading when vegOnly is true
+          if (catCategory === category) {
+            cat.style.display = 'block';
+          } else {
+            cat.style.display = 'none';
+          }
+        }
+      } else {
+        // Show category if it matches selected category or 'all'
+        if (category === 'all' || catCategory === category) {
+          cat.style.display = 'block';
+        } else {
+          cat.style.display = 'none';
+        }
+      }
+    });
+  }
 
   tabBtns.forEach(btn => {
     btn.addEventListener('click', function() {
@@ -179,25 +267,12 @@ document.addEventListener('DOMContentLoaded', function() {
       tabBtns.forEach(b => b.classList.remove('active'));
       this.classList.add('active');
 
-      // Filter items
-      const category = this.dataset.category;
-      menuItems.forEach(item => {
-        if (category === 'all' || item.dataset.category === category) {
-          item.style.display = 'flex';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-
-      // Show/hide category headings
-      document.querySelectorAll('.menu-category').forEach(cat => {
-        if (category === 'all' || cat.querySelector('.menu-item[data-category="'+category+'"]')) {
-          cat.style.display = 'block';
-        } else {
-          cat.style.display = 'none';
-        }
-      });
+      filterMenu();
     });
+  });
+
+  vegToggle.addEventListener('change', function() {
+    filterMenu();
   });
 
   // Reservation form handling

@@ -30,7 +30,14 @@
 <section class="menu-section">
   <div class="container">
     <h1 style="display: flex;align-items: center;justify-content: center;">Our Menu</h1><br>
-    <div class="menu-tabs">
+  <div class="veg-toggle-container" style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
+    <label class="switch">
+      <input type="checkbox" id="vegToggle" />
+      <span class="slider round"></span>
+    </label>
+    <span style="margin-left: 10px; font-weight: 600; font-size: 1.1rem; color: var(--primary-color); user-select: none;">Only Veg</span>
+  </div>
+  <div class="menu-tabs">
     <button class="tab-btn active" data-category="all">All Items</button>
     <button class="tab-btn" data-category="starters">Starters</button>
     <button class="tab-btn" data-category="mains">Main Course</button>
@@ -46,32 +53,80 @@
   </div>
 
   <div class="menu-items">
-    <div class="menu-category" data-category="starters">
-      <h2>Starters</h2>
-      <div class="menu-grid">
-        <div class="menu-item" data-category="starters">
-          <div class="menu-item-img" style="background-image: url('https://www.indianhealthyrecipes.com/wp-content/uploads/2021/07/paneer-tikka.jpg');"></div>
-          <div class="item-info">
-            <h3>Paneer Tikka</h3>
-            <p>Grilled paneer cubes marinated in spices</p>
+      <div class="menu-category" data-category="starters">
+        <h2>Starters</h2>
+        <div class="menu-grid">
+          <div class="menu-item" data-category="starters" data-veg="true">
+            <div class="menu-item-img" style="background-image: url('https://www.indianhealthyrecipes.com/wp-content/uploads/2021/07/paneer-tikka.jpg');"></div>
+            <div class="item-info">
+              <h3>Paneer Tikka</h3>
+              <p>Grilled paneer cubes marinated in spices</p>
+            </div>
+            <span class="price">₹220</span>
           </div>
-          <span class="price">₹220</span>
-        </div>
-        <div class="menu-item" data-category="starters">
-          <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/736x/6b/ee/97/6bee973baaeab4c4da15ef28eaf06241.jpg');"></div>
-          <div class="item-info">
-            <h3>Chicken 65</h3>
-            <p>Spicy deep-fried chicken chunks</p>
+          <div class="menu-item" data-category="starters" data-veg="false">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/736x/6b/ee/97/6bee973baaeab4c4da15ef28eaf06241.jpg');"></div>
+            <div class="item-info">
+              <h3>Chicken 65</h3>
+              <p>Spicy deep-fried chicken chunks</p>
+            </div>
+            <span class="price">₹250</span>
           </div>
-          <span class="price">₹250</span>
+          <div class="menu-item" data-category="starters" data-veg="true">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/736x/29/41/a6/2941a6153669acb5a03c375fd50c54c4.jpg');"></div>
+            <div class="item-info">
+              <h3>Veg Spring Rolls</h3>
+              <p>Crispy rolls stuffed with mixed vegetables</p>
+            </div>
+            <span class="price">₹180</span>
+          </div>
+          <div class="menu-item" data-category="starters" data-veg="true">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/79/11/8b/79118bcfcf66fc6dc3363259bb4c7279.jpg');"></div>
+            <div class="item-info">
+              <h3>Paneer Pakora</h3>
+              <p>Deep-fried paneer fritters with spices</p>
+            </div>
+            <span class="price">₹200</span>
+          </div>
+          <div class="menu-item" data-category="starters" data-veg="false">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/79/45/69/794569dcefa87a09220674dd08aa7640.jpg');"></div>
+            <div class="item-info">
+              <h3>Fish Fry</h3>
+              <p>Spicy fried fish fillets</p>
+            </div>
+            <span class="price">₹270</span>
+          </div>
+          <div class="menu-item" data-category="starters" data-veg="true">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/736x/7f/ec/da/7fecda7de150e956940d6e963f0c87bf.jpg');"></div>
+            <div class="item-info">
+              <h3>Hara Bhara Kabab</h3>
+              <p>Spinach and peas patties</p>
+            </div>
+            <span class="price">₹190</span>
+          </div>
+          <div class="menu-item" data-category="starters" data-veg="false">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/736x/3e/25/0e/3e250ec73c8ee8a5f8529fa2d5bcb354.jpg');"></div>
+            <div class="item-info">
+              <h3>Chicken Tikka</h3>
+              <p>Grilled chicken chunks marinated in spices</p>
+            </div>
+            <span class="price">₹260</span>
+          </div>
+          <div class="menu-item" data-category="starters" data-veg="true">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/64/16/73/6416733eeda35bf65bfa757d6d4c39c0.jpg');"></div>
+            <div class="item-info">
+              <h3>Vegetable Samosa</h3>
+              <p>Fried pastry filled with spiced potatoes</p>
+            </div>
+            <span class="price">₹150</span>
+          </div>
         </div>
       </div>
-    </div>
 
       <div class="menu-category" data-category="mains">
         <h2>Main Course</h2>
         <div class="menu-grid">
-          <div class="menu-item" data-category="mains">
+          <div class="menu-item" data-category="mains" data-veg="false">
             <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/93/e9/79/93e97987768f9240c5ffda2475c0ce28.jpg');"></div>
             <div class="item-info">
               <h3>Butter Chicken</h3>
@@ -79,13 +134,61 @@
             </div>
             <span class="price">₹425</span>
           </div>
-          <div class="menu-item" data-category="mains">
+          <div class="menu-item" data-category="mains" data-veg="true">
             <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/31/a0/58/31a058ec9b3d2dde1c23146939dc7589.jpg');"></div>
             <div class="item-info">
               <h3>Palak Paneer</h3>
               <p>Spinach curry with soft paneer cubes</p>
             </div>
             <span class="price">₹375</span>
+          </div>
+          <div class="menu-item" data-category="mains" data-veg="true">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/b0/5e/1b/b05e1bf78f121472db8382520cbaf33e.jpg');"></div>
+            <div class="item-info">
+              <h3>Dal Makhani</h3>
+              <p>Slow-cooked black lentils in creamy sauce</p>
+            </div>
+            <span class="price">₹350</span>
+          </div>
+          <div class="menu-item" data-category="mains" data-veg="true">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/736x/d6/60/25/d660255e0ac13e20bc3c674ee3d11ac4.jpg');"></div>
+            <div class="item-info">
+              <h3>Chole Bhature</h3>
+              <p>Spicy chickpeas with fried bread</p>
+            </div>
+            <span class="price">₹320</span>
+          </div>
+          <div class="menu-item" data-category="mains" data-veg="false">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/9f/b2/e3/9fb2e3908b984e5d3f11b941dd839172.jpg');"></div>
+            <div class="item-info">
+              <h3>Rogan Josh</h3>
+              <p>Spiced lamb curry</p>
+            </div>
+            <span class="price">₹450</span>
+          </div>
+          <div class="menu-item" data-category="mains" data-veg="false">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/736x/59/0f/28/590f28bb5facfad9d6ed712ed6b3508b.jpg');"></div>
+            <div class="item-info">
+              <h3>Fish Curry</h3>
+              <p>Fish cooked in tangy curry sauce</p>
+            </div>
+            <span class="price">₹430</span>
+          </div>
+          <div class="menu-item" data-category="mains" data-veg="true">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/0e/71/59/0e715939aedc11cc8f16be414482d60e.jpg');"></div>
+            <div class="item-info">
+              <h3>Mixed Vegetable Curry</h3>
+              <p>Seasonal vegetables cooked in spices</p>
+            </div>
+            <span class="price">₹340</span>
+          </div>
+          <div class="menu-item" data-category="mains" data-veg="false">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/8c/23/f3/8c23f3cabfaf3aaf1e18ee27edfde5ab.jpg');"></div>
+            <div class="item-info">
+              <h3>Chicken Curry</h3>
+              <p>Classic chicken curry with spices</p>
+            </div>
+            <span class="price">₹420</span>
           </div>
         </div>
       </div>
@@ -109,6 +212,62 @@
             </div>
             <span class="price">₹110</span>
           </div>
+          <div class="menu-item" data-category="desserts">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/6e/ce/23/6ece23ab35111d6258831beadb91d150.jpg');"></div>
+            <div class="item-info">
+              <h3>Rasgulla</h3>
+              <p>Soft spongy balls in sugar syrup</p>
+            </div>
+            <span class="price">₹130</span>
+          </div>
+          <div class="menu-item" data-category="desserts">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/736x/65/a5/46/65a546fc134637e04cd366f63c1ab2e1.jpg');"></div>
+            <div class="item-info">
+              <h3>Jalebi</h3>
+              <p>Crispy fried spirals soaked in syrup</p>
+            </div>
+            <span class="price">₹100</span>
+          </div>
+          <div class="menu-item" data-category="desserts">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/736x/a6/90/33/a690338dbde0cd6d02b0e786d72f7f63.jpg');"></div>
+            <div class="item-info">
+              <h3>Kaju Katli</h3>
+              <p>Cashew nut fudge with silver leaf</p>
+            </div>
+            <span class="price">₹150</span>
+          </div>
+          <div class="menu-item" data-category="desserts">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/736x/fa/5d/6f/fa5d6fb6126dfda9dc375fc7835197a0.jpg');"></div>
+            <div class="item-info">
+              <h3>Besan Ladoo</h3>
+              <p>Sweet gram flour balls with ghee</p>
+            </div>
+            <span class="price">₹110</span>
+          </div>
+          <div class="menu-item" data-category="desserts">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/85/fa/53/85fa53766d57978bb160762e5e7afc57.jpg');"></div>
+            <div class="item-info">
+              <h3>Phirni</h3>
+              <p>Rice pudding flavored with cardamom</p>
+            </div>
+            <span class="price">₹115</span>
+          </div>
+          <div class="menu-item" data-category="desserts">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/5e/be/53/5ebe53202f359d72b60591e5e3a3976d.jpg');"></div>
+            <div class="item-info">
+              <h3>Malpua</h3>
+              <p>Sweet pancakes soaked in syrup</p>
+            </div>
+            <span class="price">₹125</span>
+          </div>
+          <div class="menu-item" data-category="desserts">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/736x/74/1f/40/741f400b9f4b81eacacfba7eac326b8e.jpg');"></div>
+            <div class="item-info">
+              <h3>Rabri</h3>
+              <p>Thickened sweetened milk with nuts</p>
+            </div>
+            <span class="price">₹130</span>
+          </div>
         </div>
       </div>
 
@@ -130,6 +289,62 @@
               <p>Spiced Indian tea</p>
             </div>
             <span class="price">₹50</span>
+          </div>
+          <div class="menu-item" data-category="drinks">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/5c/5d/4b/5c5d4b37b4b99256528dbeac5c0b46b1.jpg');"></div>
+            <div class="item-info">
+              <h3>Chai Latte</h3>
+              <p>Milk tea with spices</p>
+            </div>
+            <span class="price">₹60</span>
+          </div>
+          <div class="menu-item" data-category="drinks">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/df/ac/23/dfac23d9b0d543c07e4daad7db6c1671.jpg');"></div>
+            <div class="item-info">
+              <h3>Filter Coffee</h3>
+              <p>Strong South Indian coffee</p>
+            </div>
+            <span class="price">₹70</span>
+          </div>
+          <div class="menu-item" data-category="drinks">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/76/db/a7/76dba7848e5dd611cdb7492600b15651.jpg');"></div>
+            <div class="item-info">
+              <h3>Masala Soda</h3>
+              <p>Spiced sparkling soda</p>
+            </div>
+            <span class="price">₹55</span>
+          </div>
+          <div class="menu-item" data-category="drinks">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/e2/6a/ce/e26ace848cb8c929ba6dddda5a3205c2.jpg');"></div>
+            <div class="item-info">
+              <h3>Sweet Lassi</h3>
+              <p>Sweet yogurt drink</p>
+            </div>
+            <span class="price">₹65</span>
+          </div>
+          <div class="menu-item" data-category="drinks">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/736x/bc/f7/24/bcf72409cf283799949e915058e930c1.jpg');"></div>
+            <div class="item-info">
+              <h3>Cold Coffee</h3>
+              <p>Chilled coffee with milk</p>
+            </div>
+            <span class="price">₹80</span>
+          </div>
+          <div class="menu-item" data-category="drinks">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/be/3e/a2/be3ea2169897bd4c83718a097078dbd1.jpg');"></div>
+            <div class="item-info">
+              <h3>Fresh Lime Soda</h3>
+              <p>Lime soda with mint</p>
+            </div>
+            <span class="price">₹50</span>
+          </div>
+          <div class="menu-item" data-category="drinks">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/74/eb/11/74eb11bfe223256ca55aeea7c65642f7.jpg');"></div>
+            <div class="item-info">
+              <h3>Herbal Tea</h3>
+              <p>Tea with herbs and spices</p>
+            </div>
+            <span class="price">₹60</span>
           </div>
         </div>
       </div>

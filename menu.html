@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu | Spice Route</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-container">
+    <a href="index.html" class="logo">Spice<span>Route</span></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="reservations.html">Reservations</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<section class="menu-section">
+  <div class="container">
+    <h1 style="display: flex;align-items: center;justify-content: center;">Our Menu</h1><br>
+    <div class="menu-tabs">
+    <button class="tab-btn active" data-category="all">All Items</button>
+    <button class="tab-btn" data-category="starters">Starters</button>
+    <button class="tab-btn" data-category="mains">Main Course</button>
+    <button class="tab-btn" data-category="desserts">Desserts</button>
+    <button class="tab-btn" data-category="drinks">Drinks</button>
+  </div>
+
+  <div class="view-buttons">
+    <button class="view-btn" data-category="starters">View Starters</button>
+    <button class="view-btn" data-category="mains">View Main Course</button>
+    <button class="view-btn" data-category="desserts">View Desserts</button>
+    <button class="view-btn" data-category="drinks">View Drinks</button>
+  </div>
+
+  <div class="menu-items">
+    <div class="menu-category" data-category="starters">
+      <h2>Starters</h2>
+      <div class="menu-grid">
+        <div class="menu-item" data-category="starters">
+          <div class="menu-item-img" style="background-image: url('https://www.indianhealthyrecipes.com/wp-content/uploads/2021/07/paneer-tikka.jpg');"></div>
+          <div class="item-info">
+            <h3>Paneer Tikka</h3>
+            <p>Grilled paneer cubes marinated in spices</p>
+          </div>
+          <span class="price">₹220</span>
+        </div>
+        <div class="menu-item" data-category="starters">
+          <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/736x/6b/ee/97/6bee973baaeab4c4da15ef28eaf06241.jpg');"></div>
+          <div class="item-info">
+            <h3>Chicken 65</h3>
+            <p>Spicy deep-fried chicken chunks</p>
+          </div>
+          <span class="price">₹250</span>
+        </div>
+      </div>
+    </div>
+
+      <div class="menu-category" data-category="mains">
+        <h2>Main Course</h2>
+        <div class="menu-grid">
+          <div class="menu-item" data-category="mains">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/93/e9/79/93e97987768f9240c5ffda2475c0ce28.jpg');"></div>
+            <div class="item-info">
+              <h3>Butter Chicken</h3>
+              <p>Chicken cooked in rich tomato butter gravy</p>
+            </div>
+            <span class="price">₹425</span>
+          </div>
+          <div class="menu-item" data-category="mains">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/31/a0/58/31a058ec9b3d2dde1c23146939dc7589.jpg');"></div>
+            <div class="item-info">
+              <h3>Palak Paneer</h3>
+              <p>Spinach curry with soft paneer cubes</p>
+            </div>
+            <span class="price">₹375</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category" data-category="desserts">
+        <h2>Desserts</h2>
+        <div class="menu-grid">
+          <div class="menu-item" data-category="desserts">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/736x/a9/3d/77/a93d77d3e242262f2c919bf66aef5b39.jpg');"></div>
+            <div class="item-info">
+              <h3>Gulab Jamun</h3>
+              <p>Deep-fried dumplings in rose syrup</p>
+            </div>
+            <span class="price">₹120</span>
+          </div>
+          <div class="menu-item" data-category="desserts">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/f8/30/f5/f830f5f68ea9ab4b9073beec720f6338.jpg');"></div>
+            <div class="item-info">
+              <h3>Rice Kheer</h3>
+              <p>Traditional rice pudding with nuts</p>
+            </div>
+            <span class="price">₹110</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category" data-category="drinks">
+        <h2>Drinks</h2>
+        <div class="menu-grid">
+          <div class="menu-item" data-category="drinks">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/63/6f/c7/636fc737238838b630b50bec0b583530.jpg');"></div>
+            <div class="item-info">
+              <h3>Mango Lassi</h3>
+              <p>Sweet mango yogurt drink</p>
+            </div>
+            <span class="price">₹90</span>
+          </div>
+          <div class="menu-item" data-category="drinks">
+            <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/736x/5b/a9/31/5ba9319c8c8264f846e828d04b3b5908.jpg');"></div>
+            <div class="item-info">
+              <h3>Masala Chai</h3>
+              <p>Spiced Indian tea</p>
+            </div>
+            <span class="price">₹50</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Spice Route</h3>
+        <p>123 Food Street<br />Mumbai, MH 400001</p>
+        <p>Phone: +91 1234567890</p>
+        <p>Email: info@spiceroute.com</p>
+      </div>
+      <div class="footer-col">
+        <h3>Hours</h3>
+        <p>Monday - Friday: 11am - 11pm</p>
+        <p>Saturday - Sunday: 11am - 12am</p>
+        <p>Closed on National Holidays</p>
+      </div>
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>Subscribe to our newsletter</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email" required />
+          <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 Spice Route. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

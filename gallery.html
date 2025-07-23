@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Spice Route</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-container">
+    <a href="index.html" class="logo">Spice<span>Route</span></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="reservations.html">Reservations</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<section class="gallery-section">
+  <div class="container">
+    <h1>Our Gallery</h1>
+    <p>A visual journey through our culinary creations</p>
+
+    <div class="gallery-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="food">Food</button>
+      <button class="filter-btn" data-filter="drinks">Drinks</button>
+      <button class="filter-btn" data-filter="restaurant">Restaurant</button>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item" data-category="food">
+        <img src="https://i.pinimg.com/1200x/d9/2a/96/d92a960df356bf78f37af56cf6fa97d2.jpg" alt="Truffle Pasta" />
+        <div class="overlay">
+          <h3>Truffle Pasta</h3>
+        </div>
+      </div>
+      <div class="gallery-item" data-category="food">
+        <img src="https://i.pinimg.com/736x/a3/46/33/a34633e8f6f8182b0916cbc0d71005ab.jpg" alt="Chicken Salad" />
+        <div class="overlay">
+          <h3>Chicken Salad</h3>
+        </div>
+      </div>
+      <div class="gallery-item" data-category="drinks">
+        <img src="https://i.pinimg.com/736x/7e/37/34/7e3734f0249570e60960582c67acf3ec.jpg" alt="Cocktails" />
+        <div class="overlay">
+          <h3>Signature Cocktails</h3>
+        </div>
+      </div>
+      <div class="gallery-item" data-category="restaurant">
+        <img src="https://i.pinimg.com/1200x/bd/b9/ab/bdb9abb6d73a15e466c244fd8d23aeaa.jpg" alt="Dining Area" />
+        <div class="overlay">
+          <h3>Main Dining Room</h3>
+        </div>
+      </div>
+      <div class="gallery-item" data-category="food">
+        <img src="https://i.pinimg.com/736x/68/49/4c/68494c5d5766d37e5f458c7a4f22f726.jpg" alt="Seafood Platter" />
+        <div class="overlay">
+          <h3>Seafood Platter</h3>
+        </div>
+      </div>
+      <div class="gallery-item" data-category="drinks">
+        <img src="https://i.pinimg.com/736x/c8/a7/4c/c8a74c7585ca9cd9e0499178c504bd0b.jpg" alt="Wine Selection" />
+        <div class="overlay">
+          <h3>Wine Selection</h3>
+        </div>
+      </div>
+      <div class="gallery-item" data-category="food">
+        <img src="https://i.pinimg.com/1200x/49/8d/e3/498de3e98394d87b6ce08d6926b3d832.jpg" alt="Chocolate Soufflé" />
+        <div class="overlay">
+          <h3>Chocolate Soufflé</h3>
+        </div>
+      </div>
+      <div class="gallery-item" data-category="restaurant">
+        <img src="https://i.pinimg.com/736x/5a/ce/f9/5acef9e78f8ee5d2becfd78dbaf07f0e.jpg" alt="Outdoor Seating" />
+        <div class="overlay">
+          <h3>Patio Dining</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Spice Route</h3>
+        <p>123 Food Street<br />Mumbai, MH 400001</p>
+        <p>Phone: +91 1234567890</p>
+        <p>Email: info@spiceroute.com</p>
+      </div>
+      <div class="footer-col">
+        <h3>Hours</h3>
+        <p>Monday - Friday: 11am - 11pm</p>
+        <p>Saturday - Sunday: 11am - 12am</p>
+        <p>Closed on National Holidays</p>
+      </div>
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>Subscribe to our newsletter</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email" required />
+          <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 Spice Route. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
